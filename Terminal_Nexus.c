@@ -88,8 +88,23 @@ do {
                     }
                     printf("\n");
                 }
+                for (int i = 1; i <= rows; i++) {
+                    for (int j = 1; j <= rows - i; j++) {
+                        printf(" ");
+                    }
+                    for (int k = 1; k <= 2 * i - 1; k++) {
+                        printf("*");
+                    }
+                    printf("\n");
+                }        
+                for (int i = 1; i <= 3; i++) {
+                    for (int j = 1; j <= rows-1; j++) {
+                        printf(" ");
+                    }
+                        printf("*\n");
+                }
+                    printf("\n");
             }
-
         } while ( number2 < 0 || number2 > 5 );
         printf("Thank you for using the Pattern Generator: Powered by Terminal Nexus\n");
     }
