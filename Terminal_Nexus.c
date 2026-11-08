@@ -51,6 +51,8 @@ do {
                     }
                     printf("\n");
                 }
+                getchar();
+                getchar();
 
             }else if (number2==3){
                 printf("Isoceles Triangle Pattern Generator\n");
@@ -65,16 +67,20 @@ do {
                     }
                     printf("\n");
                 }
+                getchar();
+                getchar();
             }else if (number2==4){
                 printf("Inverted Right Triangle Pattern Generator\n");
                 printf("Enter the number of rows: ");
                 scanf("%d", &rows);
-                for (int i = rows ; i >= 1; i--){
-                    for (int j= 1; j <= i; j++){
+                for (int i =1 ; i <= rows; i++){
+                    for (int j= rows; j >= i; j--){
                         printf("* ");
                     }
                     printf("\n");
                 }
+                getchar();
+                getchar();
             }else if (number2==5){
                 printf("Christmas Tree Pattern Generator\n");
                 printf("Enter the number of rows: ");
@@ -105,6 +111,8 @@ do {
                 }
                     printf("\n");
             }
+            getchar();
+            getchar();
         } while ( number2 < 0 || number2 > 5 );
         printf("Thank you for using the Pattern Generator: Powered by Terminal Nexus\n");
     }
