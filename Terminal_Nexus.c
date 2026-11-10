@@ -115,6 +115,27 @@ do {
             getchar();
         } while ( number2 < 0 || number2 > 5 );
         printf("Thank you for using the Pattern Generator: Powered by Terminal Nexus\n");
+    } else if (number==2){
+        printf("========== Pascal's Triangle Generator: Powered by Terminal Nexus ==========\n");
+        printf("Enter the number of rows: ");
+        scanf("%d", &rows);
+        int value = 1, space, i, j;
+        for (i = 1; i <= rows; i++) {
+            for (space = 1; space <= rows - i; space++) {
+                printf("  ");
+            }
+            for (j = 1; j <= i; j++) {
+                if (j == 1 || j == i) {
+                    value = 1;
+                } else {
+                    value = value * (i - j + 1) / (j - 1);
+                }
+                printf("%4d", value);
+            }
+            printf("\n");
+        }
+        getchar();
+        getchar();
     }
-return 0;
+ return 0;
 }
