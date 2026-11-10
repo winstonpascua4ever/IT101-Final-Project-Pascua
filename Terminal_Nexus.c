@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int main(){
 int number;
 int i=0;
@@ -136,6 +137,80 @@ do {
         }
         getchar();
         getchar();
+
+    } else if (number==3){
+        float prelim, midterm, semifinals, finals, average;
+   while (1) {
+    printf("Enter Prelim Grade: ");
+    scanf("%f", &prelim);
+    if (prelim < 0 || prelim > 5) {
+        printf("Invalid grade. Please enter a grade between 0 and 5.\n");
+        continue;
     }
+    break;
+    }
+    while (1) {
+    printf("Enter Midterm Grade: ");
+    scanf("%f", &midterm);
+    if (midterm < 0 || midterm > 5) {
+        printf("Invalid grade. Please enter a grade between 0 and 5.\n");
+        continue;
+    }
+    break;
+    }
+    while (1) {
+    printf("Enter SemiFinals Grade: ");
+    scanf("%f", &semifinals);
+    if (semifinals < 0 || semifinals > 5) {
+        printf("Invalid grade. Please enter a grade between 0 and 5.\n");
+        continue;
+    }
+    break;
+    }
+    while (1) {
+    printf("Enter Final Grade: ");
+    scanf("%f", &finals);
+    if (finals < 0 || finals > 5) {
+        printf("Invalid grade. Please enter a grade between 0 and 5.\n");
+        continue;
+    }
+    break;
+    }  
+    average = (prelim + midterm + semifinals + finals) / 4;
+
+    printf("\nYour Average Grade: %.2f\n", average);
+
+    if (average <= 3) {
+        printf("Remarks: PASSED\n");
+    } else {
+        printf("Remarks: FAILED\n");
+    }
+    getchar();
+    getchar();
+    
+} else if (number==4){
+    
+    char word[100];
+    int i, length, palindrome = 1;
+    printf("========== Palindrome Checker: Powered by Terminal Nexus ==========\n");
+    printf("Enter a word: ");
+    scanf("%s", word);
+
+    length = strlen(word);
+
+    for (i = 0; i < length / 2; i++) {
+        if (word[i] != word[length - 1 - i]) {
+            palindrome = 0;
+            break;
+        }
+    }
+    if (palindrome == 1) {
+        printf("%s is a Palindrome.\n", word);
+    } else {
+        printf("%s is not a Palindrome.\n", word);
+    }
+    }
+    getchar();
+    getchar();
  return 0;
 }
