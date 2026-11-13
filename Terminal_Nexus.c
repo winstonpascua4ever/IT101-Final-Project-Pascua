@@ -10,9 +10,11 @@ do {
     printf("Grade Calculator & Evaluator (3)\n");
     printf("Palindrome Checker (4)\n");
     printf("Enter a number (0 to exit): ");
-    scanf("%d", &number);
-    while (getchar() != '\n');
-    printf("Please enter a valid number between 0 and 4\n");
+    if (scanf("%d", &number)!=1) {
+        printf("Please enter a valid number between 0 and 4\n");
+        while (getchar() != '\n'); 
+    }
+
 
 } while ( number < 0 || number > 4 );
     printf("Thank you for using Terminal Nexus\n");
@@ -29,23 +31,47 @@ do {
         printf("Inverted Right Triangle Pattern Generator (4)\n");
         printf("Christmas Tree Pattern Generator (5)\n");
         printf("Enter a number (0 to exit): ");
-        scanf("%d", &number2);
-            
-        if (number2==1){
+        if (scanf("%d", &number2)!=1 ){
+            printf("Please enter a valid number between 0 and 5\n");
+            while (getchar() != '\n');
+       } 
+    }while (number2 < 0 || number2 >5 );
+        printf("Thank you for using the Pattern Generator: Powered by Terminal Nexus\n");
+
+             if(number2==1){
+                while (1){
                 printf("Right Triangle Pattern Generator\n");
                 printf("Enter the number of rows: ");
-                scanf("%d", &rows);
+               if (scanf("%d", &rows)!=1){
+                while (getchar()!='\n');
+                continue;
+               } else if (rows<1){
+                continue;
+               }
+               break;
+            }
                 for (int i = 1; i <= rows; i++) {
                     for (int j = 1; j <= i; j++) {
                         printf("* ");
                     }
                     printf("\n");
                 }
+                getchar ();
+                getchar ();
 
             }else if (number2==2){
+                while (1){
                 printf("Square Pattern Generator\n");
                 printf("Enter the number of rows: ");
-                scanf("%d", &rows);
+                if(scanf("%d", &rows)!=1){
+                while (getchar()!='\n');
+                continue;
+                }else if (rows<1){
+                continue;
+                }
+                break;
+                }
+            
                 for (int i = 1; i <= rows; i++) {
                     for (int j = 1; j <= rows; j++) {
                         printf("* ");
@@ -56,9 +82,17 @@ do {
                 getchar();
 
             }else if (number2==3){
+                while (1){
                 printf("Isoceles Triangle Pattern Generator\n");
                 printf("Enter the number of rows: ");
-                scanf("%d", &rows);
+                if (scanf("%d", &rows)!=1){
+                    while (getchar()!='\n');
+                    continue;
+                }else if (rows<1){
+                continue;
+                }
+                break;
+            }
                 for (int i = 1; i <= rows; i++) {
                     for (int j = 1; j <= rows - i; j++) {
                         printf(" ");
@@ -70,10 +104,19 @@ do {
                 }
                 getchar();
                 getchar();
+
             }else if (number2==4){
+               while(1){
                 printf("Inverted Right Triangle Pattern Generator\n");
                 printf("Enter the number of rows: ");
-                scanf("%d", &rows);
+                if (scanf("%d", &rows)!=1){
+                    while (getchar()!='\n');
+                    continue;
+                }else if(rows<1){
+                continue;
+                }
+                break;
+            }
                 for (int i =1 ; i <= rows; i++){
                     for (int j= rows; j >= i; j--){
                         printf("* ");
@@ -82,10 +125,19 @@ do {
                 }
                 getchar();
                 getchar();
+            
             }else if (number2==5){
+                while (1){
                 printf("Christmas Tree Pattern Generator\n");
                 printf("Enter the number of rows: ");
-                scanf("%d", &rows);
+                if (scanf("%d", &rows)!=1){
+                    while (getchar()!='\n');
+                    continue;
+                }else if (rows<1){
+                    continue;
+                }
+                break;
+            }
                 for (int i = 1; i <= rows; i++) {
                     for (int j = 1; j <= rows - i; j++) {
                         printf(" ");
@@ -114,12 +166,19 @@ do {
             }
             getchar();
             getchar();
-        } while ( number2 < 0 || number2 > 5 );
-        printf("Thank you for using the Pattern Generator: Powered by Terminal Nexus\n");
-    } else if (number==2){
+   
+        } else if (number==2){
         printf("========== Pascal's Triangle Generator: Powered by Terminal Nexus ==========\n");
+         while (1){
         printf("Enter the number of rows: ");
-        scanf("%d", &rows);
+        if (scanf("%d", &rows)!=1){
+            while (getchar()!='\n');
+            continue;
+        }else if (rows<1){
+            continue;
+        }
+        break;
+    }
         int value = 1, space, i, j;
         for (i = 1; i <= rows; i++) {
             for (space = 1; space <= rows - i; space++) {
@@ -142,7 +201,11 @@ do {
         float prelim, midterm, semifinals, finals, average;
    while (1) {
     printf("Enter Prelim Grade: ");
-    scanf("%f", &prelim);
+    if (scanf("%f", &prelim)!=1){
+        while (getchar()!='\n');
+        continue;
+
+    }
     if (prelim < 0 || prelim > 5) {
         printf("Invalid grade. Please enter a grade between 0 and 5.\n");
         continue;
@@ -151,7 +214,11 @@ do {
     }
     while (1) {
     printf("Enter Midterm Grade: ");
-    scanf("%f", &midterm);
+    if (scanf("%f", &midterm)!=1){
+       while (getchar()!='\n');
+       continue;
+
+    }
     if (midterm < 0 || midterm > 5) {
         printf("Invalid grade. Please enter a grade between 0 and 5.\n");
         continue;
@@ -160,7 +227,10 @@ do {
     }
     while (1) {
     printf("Enter SemiFinals Grade: ");
-    scanf("%f", &semifinals);
+    if (scanf("%f", &semifinals)!=1){
+        while (getchar ()!= '\n');
+        continue;
+    }
     if (semifinals < 0 || semifinals > 5) {
         printf("Invalid grade. Please enter a grade between 0 and 5.\n");
         continue;
@@ -169,13 +239,16 @@ do {
     }
     while (1) {
     printf("Enter Final Grade: ");
-    scanf("%f", &finals);
+    if (scanf("%f", &finals)!=1){
+     while (getchar()!= '\n');
+     continue;
+    }
     if (finals < 0 || finals > 5) {
         printf("Invalid grade. Please enter a grade between 0 and 5.\n");
         continue;
     }
     break;
-    }  
+    }
     average = (prelim + midterm + semifinals + finals) / 4;
 
     printf("\nYour Average Grade: %.2f\n", average);
