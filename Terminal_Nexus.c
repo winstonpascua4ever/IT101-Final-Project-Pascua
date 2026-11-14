@@ -19,7 +19,7 @@ do {
     printf("Thank you for using Terminal Nexus\n");
    
 
-        int rows, columns;
+        int rows;
         int number2;
         if (number==1){
         do {
