@@ -2,7 +2,6 @@
 #include <string.h>
 int main(){
 int number;
-int i=0;
 printf("========== Terminal Nexus ==========\n");
 do {
     printf("Pattern Generator (1)\n");
