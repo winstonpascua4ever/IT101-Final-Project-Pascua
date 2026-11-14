@@ -198,7 +198,8 @@ do {
 
     } else if (number==3){
         float prelim, midterm, semifinals, finals, average;
-   while (1) {
+        printf ("========== Grade Calculator & Evaluator ==========\n");
+        while (1) {
     printf("Enter Prelim Grade: ");
     if (scanf("%f", &prelim)!=1){
         while (getchar()!='\n');
